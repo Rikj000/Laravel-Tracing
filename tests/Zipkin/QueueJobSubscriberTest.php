@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Tests\Zipkin;
+namespace Rikj000\Tracing\Tests\Zipkin;
 
 use Exception;
 use Illuminate\Container\Container;
@@ -12,10 +12,10 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Fluent;
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Vinelab\Tracing\Contracts\Tracer;
-use Vinelab\Tracing\Listeners\QueueJobSubscriber;
-use Vinelab\Tracing\Tests\Fixtures\ExampleJob;
-use Vinelab\Tracing\Tests\Fixtures\NoopReporter;
+use Rikj000\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Listeners\QueueJobSubscriber;
+use Rikj000\Tracing\Tests\Fixtures\ExampleJob;
+use Rikj000\Tracing\Tests\Fixtures\NoopReporter;
 
 class QueueJobSubscriberTest extends TestCase
 {

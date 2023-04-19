@@ -1,13 +1,13 @@
 <?php
 
-namespace Vinelab\Tracing\Listeners;
+namespace Rikj000\Tracing\Listeners;
 
 use Illuminate\Console\Command;
 use Illuminate\Console\Events\CommandStarting;
 use Illuminate\Contracts\Console\Kernel;
 use Illuminate\Support\Arr;
-use Vinelab\Tracing\Contracts\ShouldBeTraced;
-use Vinelab\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Contracts\ShouldBeTraced;
+use Rikj000\Tracing\Contracts\Tracer;
 
 class TraceCommand
 {

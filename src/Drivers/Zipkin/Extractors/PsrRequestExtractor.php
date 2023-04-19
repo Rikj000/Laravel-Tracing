@@ -1,8 +1,8 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin\Extractors;
+namespace Rikj000\Tracing\Drivers\Zipkin\Extractors;
 
-use Vinelab\Tracing\Drivers\Zipkin\Propagation\PsrRequest;
+use Rikj000\Tracing\Drivers\Zipkin\Propagation\PsrRequest;
 use Zipkin\Propagation\Getter;
 
 class PsrRequestExtractor extends ZipkinExtractor

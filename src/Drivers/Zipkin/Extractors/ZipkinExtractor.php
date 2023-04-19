@@ -1,10 +1,10 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin\Extractors;
+namespace Rikj000\Tracing\Drivers\Zipkin\Extractors;
 
-use Vinelab\Tracing\Contracts\Extractor;
-use Vinelab\Tracing\Contracts\SpanContext;
-use Vinelab\Tracing\Drivers\Zipkin\ZipkinSpanContext;
+use Rikj000\Tracing\Contracts\Extractor;
+use Rikj000\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Drivers\Zipkin\ZipkinSpanContext;
 use Zipkin\Propagation\Getter;
 use Zipkin\Propagation\Propagation;
 use Zipkin\Propagation\TraceContext;

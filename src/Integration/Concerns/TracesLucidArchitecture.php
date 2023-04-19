@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Integration\Concerns;
+namespace Rikj000\Tracing\Integration\Concerns;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\App;
@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Event;
 use Lucid\Foundation\Events\FeatureStarted as LegacyFeatureStarted;
 use Lucid\Foundation\Events\JobStarted as LegacyJobStarted;
 use Lucid\Foundation\Events\OperationStarted as LegacyOperationStarted;
-use Vinelab\Tracing\Facades\Trace;
+use Rikj000\Tracing\Facades\Trace;
 use Lucid\Events\FeatureStarted;
 use Lucid\Events\OperationStarted;
 use Lucid\Events\JobStarted;

@@ -1,8 +1,8 @@
 <?php
 
-namespace Vinelab\Tracing\Tests\Zipkin;
+namespace Rikj000\Tracing\Tests\Zipkin;
 
-use Vinelab\Tracing\Drivers\Zipkin\ZipkinTracer;
+use Rikj000\Tracing\Drivers\Zipkin\ZipkinTracer;
 use Zipkin\Recording\Span;
 use Zipkin\Reporter;
 

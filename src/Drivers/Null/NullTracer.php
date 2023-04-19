@@ -1,12 +1,12 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Null;
+namespace Rikj000\Tracing\Drivers\Null;
 
-use Vinelab\Tracing\Contracts\Extractor;
-use Vinelab\Tracing\Contracts\Injector;
-use Vinelab\Tracing\Contracts\Span;
-use Vinelab\Tracing\Contracts\SpanContext;
-use Vinelab\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Contracts\Extractor;
+use Rikj000\Tracing\Contracts\Injector;
+use Rikj000\Tracing\Contracts\Span;
+use Rikj000\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\Tracer;
 
 class NullTracer implements Tracer
 {

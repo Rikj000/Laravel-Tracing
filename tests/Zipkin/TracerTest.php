@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Tests\Zipkin;
+namespace Rikj000\Tracing\Tests\Zipkin;
 
 use Carbon\Carbon;
 use Google\Cloud\PubSub\Message;
@@ -11,10 +11,10 @@ use Mockery;
 use PhpAmqpLib\Message\AMQPMessage;
 use PhpAmqpLib\Wire\AMQPTable;
 use PHPUnit\Framework\TestCase;
-use Vinelab\Tracing\Contracts\SpanContext;
-use Vinelab\Tracing\Drivers\Zipkin\ZipkinTracer;
-use Vinelab\Tracing\Propagation\Formats;
-use Vinelab\Tracing\Tests\Fixtures\NoopReporter;
+use Rikj000\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Drivers\Zipkin\ZipkinTracer;
+use Rikj000\Tracing\Propagation\Formats;
+use Rikj000\Tracing\Tests\Fixtures\NoopReporter;
 use Zipkin\Propagation\TraceContext;
 
 class TracerTest extends TestCase

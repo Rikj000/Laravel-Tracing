@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Propagation;
+namespace Rikj000\Tracing\Propagation;
 
 class Formats
 {
@@ -30,7 +30,7 @@ class Formats
     public const GOOGLE_PUBSUB = 'google_pubsub';
 
     /**
-     * For Vinelab/http request headers
+     * For Rikj000/http request headers
      */
     public const VINELAB_HTTP = 'vinelab_http';
 }

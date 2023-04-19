@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin\Propagation;
+namespace Rikj000\Tracing\Drivers\Zipkin\Propagation;
 
 use Illuminate\Http\Request;
 use Zipkin\Propagation\Exceptions\InvalidPropagationCarrier;

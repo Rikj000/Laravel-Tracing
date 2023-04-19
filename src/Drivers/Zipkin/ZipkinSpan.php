@@ -1,9 +1,9 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin;
+namespace Rikj000\Tracing\Drivers\Zipkin;
 
-use Vinelab\Tracing\Contracts\Span;
-use Vinelab\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\Span;
+use Rikj000\Tracing\Contracts\SpanContext;
 use Zipkin\Span as RawSpan;
 use function Zipkin\Timestamp\now;
 

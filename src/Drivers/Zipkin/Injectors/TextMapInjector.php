@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin\Injectors;
+namespace Rikj000\Tracing\Drivers\Zipkin\Injectors;
 
 use Zipkin\Propagation\Map;
 use Zipkin\Propagation\Setter;

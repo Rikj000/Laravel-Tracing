@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Middleware;
+namespace Rikj000\Tracing\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Config\Repository;
@@ -9,10 +9,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Symfony\Component\HttpFoundation\HeaderBag;
-use Vinelab\Http\Response;
-use Vinelab\Tracing\Contracts\Span;
-use Vinelab\Tracing\Contracts\Tracer;
-use Vinelab\Tracing\Propagation\Formats;
+use Rikj000\Http\Response;
+use Rikj000\Tracing\Contracts\Span;
+use Rikj000\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Propagation\Formats;
 
 class TraceRequests
 {

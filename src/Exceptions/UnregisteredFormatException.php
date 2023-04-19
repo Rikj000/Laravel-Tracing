@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Exceptions;
+namespace Rikj000\Tracing\Exceptions;
 
 use RuntimeException;
 

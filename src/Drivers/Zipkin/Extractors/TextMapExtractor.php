@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin\Extractors;
+namespace Rikj000\Tracing\Drivers\Zipkin\Extractors;
 
 use Zipkin\Propagation\Getter;
 use Zipkin\Propagation\Map;

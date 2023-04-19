@@ -1,12 +1,12 @@
 <?php
 
-namespace Vinelab\Tracing;
+namespace Rikj000\Tracing;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Support\Manager;
-use Vinelab\Tracing\Contracts\Tracer;
-use Vinelab\Tracing\Drivers\Null\NullTracer;
-use Vinelab\Tracing\Drivers\Zipkin\ZipkinTracer;
+use Rikj000\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Drivers\Null\NullTracer;
+use Rikj000\Tracing\Drivers\Zipkin\ZipkinTracer;
 
 class TracingDriverManager extends Manager
 {

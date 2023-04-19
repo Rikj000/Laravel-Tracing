@@ -1,8 +1,8 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin\Injectors;
+namespace Rikj000\Tracing\Drivers\Zipkin\Injectors;
 
-use Vinelab\Tracing\Drivers\Zipkin\Propagation\AMQP;
+use Rikj000\Tracing\Drivers\Zipkin\Propagation\AMQP;
 use Zipkin\Propagation\Setter;
 
 class AMQPInjector extends ZipkinInjector

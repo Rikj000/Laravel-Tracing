@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Listeners;
+namespace Rikj000\Tracing\Listeners;
 
 use Illuminate\Container\Container;
 use Illuminate\Contracts\Support\Arrayable;
@@ -15,10 +15,10 @@ use JsonSerializable;
 use Psr\Container\ContainerInterface;
 use ReflectionClass;
 use ReflectionParameter;
-use Vinelab\Tracing\Contracts\ShouldBeTraced;
-use Vinelab\Tracing\Contracts\Span;
-use Vinelab\Tracing\Contracts\SpanContext;
-use Vinelab\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Contracts\ShouldBeTraced;
+use Rikj000\Tracing\Contracts\Span;
+use Rikj000\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\Tracer;
 
 class QueueJobSubscriber
 {

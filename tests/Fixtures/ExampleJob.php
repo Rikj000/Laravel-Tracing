@@ -1,14 +1,14 @@
 <?php
 
-namespace Vinelab\Tracing\Tests\Fixtures;
+namespace Rikj000\Tracing\Tests\Fixtures;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Fluent;
-use Vinelab\Tracing\Contracts\ShouldBeTraced;
-use Vinelab\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\ShouldBeTraced;
+use Rikj000\Tracing\Contracts\SpanContext;
 
 class ExampleJob implements ShouldQueue, ShouldBeTraced
 {

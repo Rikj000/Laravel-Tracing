@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Tests\Fixtures;
+namespace Rikj000\Tracing\Tests\Fixtures;
 
 use Zipkin\Recording\Span as MutableSpan;
 use Zipkin\Reporter;

@@ -69,13 +69,13 @@ This package requires **PHP >= 7.1** and **Laravel 5.5 or later**. We also offer
 First, install the package via Composer:
 
 ```sh
-composer require vinelab/tracing-laravel
+composer require rikj000/tracing-laravel
 ```
 
 After installation, you can publish the package configuration using the `vendor:publish` command. This command will publish the `tracing.php` configuration file to your config directory:
 
 ```sh
-php artisan vendor:publish --provider="Vinelab\Tracing\TracingServiceProvider"
+php artisan vendor:publish --provider="Rikj000\Tracing\TracingServiceProvider"
 ```
 
 You may configure the driver and service name in your `.env` file:
@@ -239,7 +239,7 @@ public function boot()
 
 ### Middleware
 
-This package includes a `\Vinelab\Tracing\Middleware\TraceRequests` middleware to take care of continuing the trace from incoming HTTP request.
+This package includes a `\Rikj000\Tracing\Middleware\TraceRequests` middleware to take care of continuing the trace from incoming HTTP request.
 
 You should register middleware class in the `$middleware` property of your `app/Http/Kernel.php` class.
 
@@ -267,7 +267,7 @@ Trace::getRootSpan()->setName('Create Order')
 
 > Lumen does not support this feature, but you can still create traces for commands manually using tracer instance.
 
-Let your console commsands be traced by adding `Vinelab\Tracing\Contracts\ShouldBeTraced` interface to your class.
+Let your console commsands be traced by adding `Rikj000\Tracing\Contracts\ShouldBeTraced` interface to your class.
 
 The container span will include the following tags:
 
@@ -284,7 +284,7 @@ Trace::getRootSpan()->setName('Mark Orders Expired')
 
 > Lumen does not support this feature, but you can still create traces for jobs manually using tracer instance.
 
-Let your queue jobs be traced by adding `Vinelab\Tracing\Contracts\ShouldBeTraced` interface to your job class.
+Let your queue jobs be traced by adding `Rikj000\Tracing\Contracts\ShouldBeTraced` interface to your job class.
 
 The container span will include the following tags:
 
@@ -352,7 +352,7 @@ Of course, you don't need to do this manually because this package already inclu
 The second parameter is a format descriptor that tells us how to deserialize tracing headers from given carrier. By default, the following formats are supported:
 
 ```php
-use Vinelab\Tracing\Propagation\Formats;
+use Rikj000\Tracing\Propagation\Formats;
 
 $spanContext = Trace::extract($carrier, Formats::TEXT_MAP);
 $spanContext = Trace::extract($carrier, Formats::PSR_REQUEST);
@@ -367,7 +367,7 @@ You may also add your own format using `registerExtractionFormat` method.
 Trace::registerExtractionFormat("pubsub", new PubSubExtractor());
 ```
 
-The injection format must implement `Vinelab\Tracing\Contracts\Extractor`. Refer to default Zipkin implementation for example.
+The injection format must implement `Rikj000\Tracing\Contracts\Extractor`. Refer to default Zipkin implementation for example.
 
 ```php
 interface Extractor
@@ -387,7 +387,7 @@ $channel->basic_publish($message, $this->exchangeName, $routingKey);
 By default, the following formats are supported:
 
 ```php
-use Vinelab\Tracing\Propagation\Formats;
+use Rikj000\Tracing\Propagation\Formats;
 
 $carrier = Trace::inject($carrier, Formats::TEXT_MAP);
 $carrier = Trace::inject($carrier, Formats::PSR_REQUEST);
@@ -399,7 +399,7 @@ $carrier = Trace::inject($carrier, Formats::VINELAB_HTTP);
 
 You may also add your own format using `registerInjectionFormat` method.
 
-The injection format must implement `Vinelab\Tracing\Contracts\Injector`. Refer to default Zipkin implementation for example.
+The injection format must implement `Rikj000\Tracing\Contracts\Injector`. Refer to default Zipkin implementation for example.
 
 ```php
 interface Injector
@@ -421,13 +421,13 @@ $carrier = Trace::injectContext($carrier, Formats::TEXT_MAP, $span->getContext()
 
 ### Writing New Driver
 
-New drivers must adhere to `Vinelab\Tracing\Contracts\Tracer` contract. Refer to the default ZipkinTracer imlementation for example.
+New drivers must adhere to `Rikj000\Tracing\Contracts\Tracer` contract. Refer to the default ZipkinTracer imlementation for example.
 
 ```php
-use Vinelab\Tracing\Contracts\Extractor;
-use Vinelab\Tracing\Contracts\Injector;
-use Vinelab\Tracing\Contracts\Span;
-use Vinelab\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\Extractor;
+use Rikj000\Tracing\Contracts\Injector;
+use Rikj000\Tracing\Contracts\Span;
+use Rikj000\Tracing\Contracts\SpanContext;
 
 public function startSpan(string $name, SpanContext $spanContext = null, ?int $timestamp = null): Span;
 public function getRootSpan(): ?Span;
@@ -446,7 +446,7 @@ public function flush(): void;
 Once you have written your custom driver, you may register it using the extend method of the `TracingDriverManager`. You should call the `extend` method from the `boot` method of your `AppServiceProvider` or any other service provider used by your application. For example, if you have written a `JaegerTracer`, you may register it like so:
 
 ```php
-use Vinelab\Tracing\TracingDriverManager;
+use Rikj000\Tracing\TracingDriverManager;
 
 /**
  * Bootstrap any application services.
@@ -472,21 +472,21 @@ TRACING_DRIVER=jaeger
 You need to register service provider manually in `bootstrap/app.php` file:
 
 ```php
-$app->register(Vinelab\Tracing\TracingServiceProvider::class);
+$app->register(Rikj000\Tracing\TracingServiceProvider::class);
 ```
 
 You should also register middleware in the same file:
 
 ```php
 $app->middleware([
-    Vinelab\Tracing\Middleware\TraceRequests::class,
+    Rikj000\Tracing\Middleware\TraceRequests::class,
 ]);
 ```
 
 Add the following lines to the end of `public/index.php` file:
 
 ```php
-$tracer = app(Vinelab\Tracing\Contracts\Tracer::class);
+$tracer = app(Rikj000\Tracing\Contracts\Tracer::class);
 
 optional($tracer->getRootSpan())->finish();
 $tracer->flush();
@@ -497,7 +497,7 @@ Finally, you may also want to copy over `config/tracing.php` from this repo if y
 If you don't use facades in your Lumen project, you can resolve tracer instance from container like this:
 
 ```php
-use Vinelab\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Contracts\Tracer;
 
 app(Tracer::class)->startSpan('Create Order')
 ```
@@ -508,7 +508,7 @@ Note that Lumen currently doesn't support automatic tracing for console commands
 
 ### Lucid Architecture
 
-This package includes optional `Vinelab\Tracing\Integration\Concerns\TracesLucidArchitecture` trait to enable tracing for [Lucid projects](https://github.com/lucid-architecture/laravel-microservice):
+This package includes optional `Rikj000\Tracing\Integration\Concerns\TracesLucidArchitecture` trait to enable tracing for [Lucid projects](https://github.com/lucid-architecture/laravel-microservice):
 
 ```php
 class TracingServiceProvider extends ServiceProvider

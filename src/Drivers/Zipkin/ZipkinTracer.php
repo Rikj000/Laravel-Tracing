@@ -1,30 +1,30 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin;
+namespace Rikj000\Tracing\Drivers\Zipkin;
 
 use Illuminate\Support\Arr;
 use Ramsey\Uuid\Uuid;
-use Vinelab\Tracing\Contracts\Extractor;
-use Vinelab\Tracing\Contracts\Injector;
-use Vinelab\Tracing\Contracts\Span;
-use Vinelab\Tracing\Contracts\SpanContext;
-use Vinelab\Tracing\Contracts\Tracer;
-use Vinelab\Tracing\Drivers\Zipkin\Extractors\AMQPExtractor;
-use Vinelab\Tracing\Drivers\Zipkin\Extractors\GooglePubSubExtractor;
-use Vinelab\Tracing\Drivers\Zipkin\Extractors\IlluminateHttpExtractor;
-use Vinelab\Tracing\Drivers\Zipkin\Extractors\PsrRequestExtractor;
-use Vinelab\Tracing\Drivers\Zipkin\Extractors\TextMapExtractor;
-use Vinelab\Tracing\Drivers\Zipkin\Extractors\ZipkinExtractor;
-use Vinelab\Tracing\Drivers\Zipkin\Injectors\AMQPInjector;
-use Vinelab\Tracing\Drivers\Zipkin\Injectors\GooglePubSubInjector;
-use Vinelab\Tracing\Drivers\Zipkin\Injectors\IlluminateHttpInjector;
-use Vinelab\Tracing\Drivers\Zipkin\Injectors\PsrRequestInjector;
-use Vinelab\Tracing\Drivers\Zipkin\Injectors\TextMapInjector;
-use Vinelab\Tracing\Drivers\Zipkin\Injectors\VinelabHttpInjector;
-use Vinelab\Tracing\Drivers\Zipkin\Injectors\ZipkinInjector;
-use Vinelab\Tracing\Exceptions\UnregisteredFormatException;
-use Vinelab\Tracing\Exceptions\UnresolvedCollectorIpException;
-use Vinelab\Tracing\Propagation\Formats;
+use Rikj000\Tracing\Contracts\Extractor;
+use Rikj000\Tracing\Contracts\Injector;
+use Rikj000\Tracing\Contracts\Span;
+use Rikj000\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Drivers\Zipkin\Extractors\AMQPExtractor;
+use Rikj000\Tracing\Drivers\Zipkin\Extractors\GooglePubSubExtractor;
+use Rikj000\Tracing\Drivers\Zipkin\Extractors\IlluminateHttpExtractor;
+use Rikj000\Tracing\Drivers\Zipkin\Extractors\PsrRequestExtractor;
+use Rikj000\Tracing\Drivers\Zipkin\Extractors\TextMapExtractor;
+use Rikj000\Tracing\Drivers\Zipkin\Extractors\ZipkinExtractor;
+use Rikj000\Tracing\Drivers\Zipkin\Injectors\AMQPInjector;
+use Rikj000\Tracing\Drivers\Zipkin\Injectors\GooglePubSubInjector;
+use Rikj000\Tracing\Drivers\Zipkin\Injectors\IlluminateHttpInjector;
+use Rikj000\Tracing\Drivers\Zipkin\Injectors\PsrRequestInjector;
+use Rikj000\Tracing\Drivers\Zipkin\Injectors\TextMapInjector;
+use Rikj000\Tracing\Drivers\Zipkin\Injectors\Rikj000HttpInjector;
+use Rikj000\Tracing\Drivers\Zipkin\Injectors\ZipkinInjector;
+use Rikj000\Tracing\Exceptions\UnregisteredFormatException;
+use Rikj000\Tracing\Exceptions\UnresolvedCollectorIpException;
+use Rikj000\Tracing\Propagation\Formats;
 use Zipkin\Endpoint;
 use Zipkin\Reporter;
 use Zipkin\Reporters\Http as HttpReporter;
@@ -366,7 +366,7 @@ class ZipkinTracer implements Tracer
         $this->registerInjectionFormat(Formats::PSR_REQUEST, new PsrRequestInjector());
         $this->registerInjectionFormat(Formats::ILLUMINATE_HTTP, new IlluminateHttpInjector());
         $this->registerInjectionFormat(Formats::AMQP, new AMQPInjector());
-        $this->registerInjectionFormat(Formats::VINELAB_HTTP, new VinelabHttpInjector());
+        $this->registerInjectionFormat(Formats::VINELAB_HTTP, new Rikj000HttpInjector());
         $this->registerInjectionFormat(Formats::GOOGLE_PUBSUB, new GooglePubSubInjector());
     }
 

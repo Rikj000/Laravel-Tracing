@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing;
+namespace Rikj000\Tracing;
 
 use Illuminate\Console\Events\CommandStarting;
 use Illuminate\Log\Events\MessageLogged;
@@ -9,9 +9,9 @@ use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\ServiceProvider;
-use Vinelab\Tracing\Contracts\Tracer;
-use Vinelab\Tracing\Facades\Trace;
-use Vinelab\Tracing\Listeners\TraceCommand;
+use Rikj000\Tracing\Contracts\Tracer;
+use Rikj000\Tracing\Facades\Trace;
+use Rikj000\Tracing\Listeners\TraceCommand;
 
 class TracingServiceProvider extends ServiceProvider
 {
@@ -32,15 +32,15 @@ class TracingServiceProvider extends ServiceProvider
 
         $this->app['events']->listen(
             JobProcessing::class,
-            'Vinelab\Tracing\Listeners\QueueJobSubscriber@onJobProcessing'
+            'Rikj000\Tracing\Listeners\QueueJobSubscriber@onJobProcessing'
         );
         $this->app['events']->listen(
             JobProcessed::class,
-            'Vinelab\Tracing\Listeners\QueueJobSubscriber@onJobProcessed'
+            'Rikj000\Tracing\Listeners\QueueJobSubscriber@onJobProcessed'
         );
         $this->app['events']->listen(
             JobFailed::class,
-            'Vinelab\Tracing\Listeners\QueueJobSubscriber@onJobFailed'
+            'Rikj000\Tracing\Listeners\QueueJobSubscriber@onJobFailed'
         );
 
         if ($this->app['config']['tracing.errors']) {

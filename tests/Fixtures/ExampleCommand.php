@@ -1,8 +1,8 @@
 <?php
 
-namespace Vinelab\Tracing\Tests\Fixtures;
+namespace Rikj000\Tracing\Tests\Fixtures;
 
-use Vinelab\Tracing\Contracts\ShouldBeTraced;
+use Rikj000\Tracing\Contracts\ShouldBeTraced;
 
 class ExampleCommand implements ShouldBeTraced
 {

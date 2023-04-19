@@ -1,8 +1,8 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin;
+namespace Rikj000\Tracing\Drivers\Zipkin;
 
-use Vinelab\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\SpanContext;
 use Zipkin\Propagation\TraceContext;
 
 class ZipkinSpanContext implements SpanContext

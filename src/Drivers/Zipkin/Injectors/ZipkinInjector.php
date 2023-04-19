@@ -1,9 +1,9 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin\Injectors;
+namespace Rikj000\Tracing\Drivers\Zipkin\Injectors;
 
-use Vinelab\Tracing\Contracts\Injector;
-use Vinelab\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\Injector;
+use Rikj000\Tracing\Contracts\SpanContext;
 use Zipkin\Propagation\Propagation;
 use Zipkin\Propagation\Setter;
 

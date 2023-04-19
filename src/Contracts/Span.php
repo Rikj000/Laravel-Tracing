@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Contracts;
+namespace Rikj000\Tracing\Contracts;
 
 interface Span
 {

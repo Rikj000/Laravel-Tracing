@@ -1,6 +1,6 @@
 <?php
 
-namespace Vinelab\Tracing\Tests\Zipkin;
+namespace Rikj000\Tracing\Tests\Zipkin;
 
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Http\JsonResponse;
@@ -10,8 +10,8 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Config;
 use Mockery;
 use PHPUnit\Framework\TestCase;
-use Vinelab\Tracing\Middleware\TraceRequests;
-use Vinelab\Tracing\Tests\Fixtures\NoopReporter;
+use Rikj000\Tracing\Middleware\TraceRequests;
+use Rikj000\Tracing\Tests\Fixtures\NoopReporter;
 
 class TraceRequestsTest extends TestCase
 {

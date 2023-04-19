@@ -1,8 +1,8 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Null;
+namespace Rikj000\Tracing\Drivers\Null;
 
-use Vinelab\Tracing\Contracts\SpanContext;
+use Rikj000\Tracing\Contracts\SpanContext;
 
 class NullSpanContext implements SpanContext
 {

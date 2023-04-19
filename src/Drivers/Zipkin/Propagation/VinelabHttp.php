@@ -1,12 +1,12 @@
 <?php
 
-namespace Vinelab\Tracing\Drivers\Zipkin\Propagation;
+namespace Rikj000\Tracing\Drivers\Zipkin\Propagation;
 
 use Zipkin\Propagation\Exceptions\InvalidPropagationCarrier;
 use Zipkin\Propagation\Exceptions\InvalidPropagationKey;
 use Zipkin\Propagation\Setter;
 
-class VinelabHttp implements Setter
+class Rikj000Http implements Setter
 {
     /**
      * Replaces a propagated key with the given value
