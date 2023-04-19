@@ -20,7 +20,7 @@ use Rikj000\Tracing\Drivers\Zipkin\Injectors\GooglePubSubInjector;
 use Rikj000\Tracing\Drivers\Zipkin\Injectors\IlluminateHttpInjector;
 use Rikj000\Tracing\Drivers\Zipkin\Injectors\PsrRequestInjector;
 use Rikj000\Tracing\Drivers\Zipkin\Injectors\TextMapInjector;
-use Rikj000\Tracing\Drivers\Zipkin\Injectors\Rikj000HttpInjector;
+use Rikj000\Tracing\Drivers\Zipkin\Injectors\VinelabHttpInjector;
 use Rikj000\Tracing\Drivers\Zipkin\Injectors\ZipkinInjector;
 use Rikj000\Tracing\Exceptions\UnregisteredFormatException;
 use Rikj000\Tracing\Exceptions\UnresolvedCollectorIpException;
@@ -366,7 +366,7 @@ class ZipkinTracer implements Tracer
         $this->registerInjectionFormat(Formats::PSR_REQUEST, new PsrRequestInjector());
         $this->registerInjectionFormat(Formats::ILLUMINATE_HTTP, new IlluminateHttpInjector());
         $this->registerInjectionFormat(Formats::AMQP, new AMQPInjector());
-        $this->registerInjectionFormat(Formats::VINELAB_HTTP, new Rikj000HttpInjector());
+        $this->registerInjectionFormat(Formats::VINELAB_HTTP, new VinelabHttpInjector());
         $this->registerInjectionFormat(Formats::GOOGLE_PUBSUB, new GooglePubSubInjector());
     }
 

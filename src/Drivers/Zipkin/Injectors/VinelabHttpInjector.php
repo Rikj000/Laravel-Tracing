@@ -2,16 +2,16 @@
 
 namespace Rikj000\Tracing\Drivers\Zipkin\Injectors;
 
-use Rikj000\Tracing\Drivers\Zipkin\Propagation\Rikj000Http;
+use Rikj000\Tracing\Drivers\Zipkin\Propagation\VinelabHttp;
 use Zipkin\Propagation\Setter;
 
-class Rikj000HttpInjector extends ZipkinInjector
+class VinelabHttpInjector extends ZipkinInjector
 {
     /**
-     * @return Rikj000Http
+     * @return VinelabHttp
      */
     protected function getSetter(): Setter
     {
-        return new Rikj000Http();
+        return new VinelabHttp();
     }
 }

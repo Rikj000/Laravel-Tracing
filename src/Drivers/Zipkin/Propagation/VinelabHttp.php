@@ -6,7 +6,7 @@ use Zipkin\Propagation\Exceptions\InvalidPropagationCarrier;
 use Zipkin\Propagation\Exceptions\InvalidPropagationKey;
 use Zipkin\Propagation\Setter;
 
-class Rikj000Http implements Setter
+class VinelabHttp implements Setter
 {
     /**
      * Replaces a propagated key with the given value
