@@ -123,8 +123,6 @@ class QueueJobSubscriber
             ->mapWithKeys(function (ReflectionParameter $param) use ($class, $jobInstance) {
                 $prop = $class->getProperty($param->name);
 
-                $prop->setAccessible(true);
-
                 return [$param->name => $prop->getValue($jobInstance)];
             });
     }
