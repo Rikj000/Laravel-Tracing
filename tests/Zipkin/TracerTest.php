@@ -405,7 +405,7 @@ class TracerTest extends TestCase
         $this->assertInstanceOf(TraceContext::class, $spanContext->getRawContext());
     }
 
-    protected function assertSpan($reporter, ZipkinTracer $tracer, Closure $assert = null)
+    protected function assertSpan($reporter, ZipkinTracer $tracer, ?Closure $assert = null)
     {
         $startTimestamp = intval(microtime(true) * 1000000);
         $span = $tracer->startSpan('Http Request', null, $startTimestamp);
